@@ -46,4 +46,10 @@ class CoordinatesSpec extends FlatSpec with Matchers  {
     }
   }
 
+  it should "allow addition of other cubes" in {
+    Cube(0,0,0) + Cube(1,0,-1) shouldEqual Cube(1,0,-1)
+    Cube(1,0,-1) + Cube(0,0,0) shouldEqual Cube(1,0,-1)
+    Cube(1,1,-2) + Cube(1,-1,0) shouldEqual Cube(2,0,-2)
+  }
+
 }

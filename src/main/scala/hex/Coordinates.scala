@@ -10,6 +10,8 @@ case class Cube(x:Int, y:Int, z:Int) {
   def toOddQ  = OddQ ( x, z + (x - (x&1)) / 2 )
   def toEvenR = EvenR( x + (z + (z&1)) / 2, z )
   def toOddR  = OddR ( x + (z - (z&1)) / 2, z )
+
+  def +(c:Cube):Cube = Cube(x+c.x, y+c.y, z+c.z)
 }
 
 case class Axial(q:Int, r:Int) {
