@@ -34,27 +34,27 @@ case class Cube(x:Int, y:Int, z:Int) extends HexCoordinate[Cube] {
   def add(c:Cube) = Cube(x+c.x, y+c.y, z+c.z)
 }
 
-case class Axial(q:Int, r:Int) {
+case class Axial(q:Int, r:Int) extends HexCoordinate[Axial] {
   def toCube = Cube( q, r )
   def fromCube(c:Cube) = c.toAxial
 }
 
-case class EvenQ(q:Int, r:Int) {
+case class EvenQ(q:Int, r:Int) extends HexCoordinate[EvenQ] {
   def toCube = Cube( q, r - (q + (q&1)) / 2 )
   def fromCube(c:Cube) = c.toEvenQ
 }
 
-case class OddQ(q:Int, r:Int) {
+case class OddQ(q:Int, r:Int) extends HexCoordinate[OddQ] {
   def toCube = Cube( q, r - (q - (q&1)) / 2 )
   def fromCube(c:Cube) = c.toOddQ
 }
 
-case class EvenR(q:Int, r:Int) {
+case class EvenR(q:Int, r:Int) extends HexCoordinate[EvenR] {
   def toCube = Cube( q - (r + (r&1)) / 2, r )
   def fromCube(c:Cube) = c.toEvenR
 }
 
-case class OddR(q:Int, r:Int) {
+case class OddR(q:Int, r:Int) extends HexCoordinate[OddR] {
   def toCube = Cube( q - (r - (r&1)) / 2, r )
   def fromCube(c:Cube) = c.toOddR
 }
