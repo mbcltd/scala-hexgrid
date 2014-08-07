@@ -7,9 +7,9 @@ object Cube {
 case class Cube(x:Int, y:Int, z:Int) {
   def toAxial = Axial( x, z )
   def toEvenQ = EvenQ( x, z + (x + (x&1)) / 2 )
-  def toOddQ = OddQ( x, z + (x - (x&1)) / 2 )
+  def toOddQ  = OddQ ( x, z + (x - (x&1)) / 2 )
   def toEvenR = EvenR( x + (z + (z&1)) / 2, z )
-  def toOddR = OddR( x + (z - (z&1)) / 2, z )
+  def toOddR  = OddR ( x + (z - (z&1)) / 2, z )
 }
 
 case class Axial(q:Int, r:Int) {
