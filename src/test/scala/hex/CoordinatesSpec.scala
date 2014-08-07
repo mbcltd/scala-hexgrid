@@ -65,4 +65,17 @@ class CoordinatesSpec extends FlatSpec with Matchers  {
     Cube.origin.northEast shouldEqual Cube(1,0,-1)
   }
 
+  "Axial coordinates" should "have the correct neighbours" in {
+    Axial(0,0).north shouldEqual Axial(0,-1)
+    Axial(0,0).northWest shouldEqual Axial(-1,0)
+    Axial(0,0).southWest shouldEqual Axial(-1,1)
+    Axial(0,0).south shouldEqual Axial(0,1)
+    Axial(0,0).southEast shouldEqual Axial(1,0)
+    Axial(0,0).northEast shouldEqual Axial(1,-1)
+  }
+
+  it should "Allow the addition of other Axial coordinates" in {
+    Axial(5,1) + Axial(3,10) shouldEqual Axial(8,11)
+  }
+
 }
