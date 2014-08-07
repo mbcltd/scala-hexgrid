@@ -1,6 +1,7 @@
 package hex
 
 
+
 trait HexCoordinate[T] {
   def toCube:Cube
   def fromCube(c:Cube):T
@@ -14,11 +15,12 @@ trait HexCoordinate[T] {
 
   def neighbours:Seq[T] = north :: northWest :: southWest :: south :: southEast :: northEast :: Nil
 
-  def +(c:HexCoordinate[_]):T = fromCube( toCube.add(c.toCube) )
+  def +(c:HexCoordinate[_]):T = fromCube( toCube.add( c.toCube ) )
 }
 
 object Cube {
   def apply(x:Int, z:Int):Cube = this( x, 0-x-z, z )
+  def origin = Cube(0,0,0)
 }
 
 case class Cube(x:Int, y:Int, z:Int) extends HexCoordinate[Cube] {

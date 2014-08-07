@@ -52,4 +52,17 @@ class CoordinatesSpec extends FlatSpec with Matchers  {
     Cube(1,1,-2) + Cube(1,-1,0) shouldEqual Cube(2,0,-2)
   }
 
+  it should "have six neighbours" in {
+    Cube.origin.neighbours.length shouldEqual 6
+  }
+
+  it should "have the correct neighbours" in {
+    Cube.origin.north shouldEqual Cube(0,1,-1)
+    Cube.origin.northWest shouldEqual Cube(-1,1,0)
+    Cube.origin.southWest shouldEqual Cube(-1,0,1)
+    Cube.origin.south shouldEqual Cube(0,-1,1)
+    Cube.origin.southEast shouldEqual Cube(1,-1,0)
+    Cube.origin.northEast shouldEqual Cube(1,0,-1)
+  }
+
 }
