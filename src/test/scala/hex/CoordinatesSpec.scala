@@ -12,7 +12,8 @@ class CoordinatesSpec extends FlatSpec with Matchers  {
     (-1,1),
     (5,20),
     (20,5),
-    (0,-10)
+    (0,-10),
+    (-5,-5)
   )
 
   "Cube coordinates" should "map to and from Axial coordinates" in {
