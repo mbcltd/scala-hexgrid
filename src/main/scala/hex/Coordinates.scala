@@ -1,7 +1,7 @@
 package hex
 
 object Cube {
-  def apply(x:Int, z:Int):Cube = this(x, 0-x-z, z)
+  def apply(x:Int, z:Int):Cube = this( x, 0-x-z, z )
 }
 
 case class Cube(x:Int, y:Int, z:Int) {
@@ -13,15 +13,15 @@ case class Cube(x:Int, y:Int, z:Int) {
 }
 
 case class Axial(q:Int, r:Int) {
-  def toCube = Cube( q, r)
+  def toCube = Cube( q, r )
 }
 
 case class EvenQ(q:Int, r:Int) {
-  def toCube = Cube( q, r - (q + (q&1)) / 2)
+  def toCube = Cube( q, r - (q + (q&1)) / 2 )
 }
 
 case class OddQ(q:Int, r:Int) {
-  def toCube = Cube( q, r - (q - (q&1)) / 2)
+  def toCube = Cube( q, r - (q - (q&1)) / 2 )
 }
 
 case class EvenR(q:Int, r:Int) {
