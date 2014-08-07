@@ -3,7 +3,7 @@ package hex
 import org.scalatest._
 import org.scalatest.prop.TableDrivenPropertyChecks._
 
-class CoordinatesSpec extends FlatSpec with Matchers  {
+class HexCoordinateSpec extends FlatSpec with Matchers  {
 
   val testCubes = Table(
     ("x","z"),
