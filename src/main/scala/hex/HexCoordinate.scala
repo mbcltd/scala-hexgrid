@@ -18,6 +18,16 @@ trait HexCoordinate[T] {
   def +(c:HexCoordinate[_]):T = fromCube( toCube.add( c.toCube ) )
 }
 
+object HexCoordinateImplicits {
+  implicit def AxialToCube(v:Axial):Cube = v.toCube
+  implicit def OddQToCube(v:OddQ):Cube = v.toCube
+  implicit def EvenQToCube(v:EvenQ):Cube = v.toCube
+  implicit def OddRToCube(v:OddR):Cube = v.toCube
+  implicit def EvenRToCube(v:EvenR):Cube = v.toCube
+
+  implicit def CubeToEvenQ(c:Cube):EvenQ = c.toEvenQ
+}
+
 object Cube {
   def apply(x:Int, z:Int):Cube = this( x, 0-x-z, z )
   def origin = Cube(0,0,0)
